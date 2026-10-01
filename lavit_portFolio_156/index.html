@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>लवित-TYAGI | Professional Data Science & Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="light-theme">
+
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <i class="fa-solid fa-user-shield"></i> <span>लवित-TYAGI</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#hero" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#resume">Resume Hub</a></li>
+            <li><a href="#certificates">Certificates</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button id="themeToggle" title="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+            <div class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION WITH PROFILE IMAGE UPLOADER -->
+    <header id="hero" class="hero-section">
+        <div class="hero-content">
+            <div class="hero-badge"><i class="fa-solid fa-bolt"></i> Data Science & Full-Stack Expert</div>
+            <h1>Transforming Complex Data into <span class="gradient-text">Actionable Insights</span></h1>
+            <p>Welcome to my professional portfolio. Explore advanced machine learning models, predictive data analytics
+                pipelines, and dynamic interactive resumes.</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary"><i class="fa-solid fa-folder-open"></i> View Projects</a>
+                <a href="#resume" class="btn btn-outline"><i class="fa-solid fa-file-invoice"></i> Explore Resume
+                    Hub</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="profile-upload-card">
+                <div class="avatar-preview-box" id="avatarPreviewBox">
+                    <img id="heroProfileImg"
+                        src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400"
+                        alt="Lavit Tyagi Profile">
+                </div>
+                <div class="avatar-upload-actions">
+                    <input type="file" id="heroImageInput" accept="image/*" hidden>
+                    <button class="btn btn-sm btn-primary w-100"
+                        onclick="document.getElementById('heroImageInput').click()">
+                        <i class="fa-solid fa-camera"></i> Upload Your Photo
+                    </button>
+                    <p class="text-sm text-secondary mt-1 text-center">Click to change profile picture</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section">
+        <div class="section-title">
+            <h2>About Me</h2>
+            <p>Bridging statistical modeling, machine learning, and full-stack development.</p>
+        </div>
+        <div class="about-grid">
+            <div class="about-text">
+                <h3>Hello! I am Lavit Tyagi (लवित त्यागी).</h3>
+                <p>I am a Computer Science Engineering student at ITM University Gwalior, graduating in 2026. I
+                    specialize in building end-to-end MERN stack web applications, machine learning prediction models,
+                    and interactive data analytics systems.</p>
+                <div class="skills-chips">
+                    <span>Python</span><span>Machine Learning</span><span>React & Node.js</span><span>SQL &
+                        MongoDB</span><span>Pandas / Scikit-Learn</span><span>Flask</span><span>Tailwind CSS</span>
+                </div>
+            </div>
+            <div class="stats-card-grid">
+                <div class="stat-box">
+                    <h3>15+</h3>
+                    <p>Projects Built</p>
+                </div>
+                <div class="stat-box">
+                    <h3>99%</h3>
+                    <p>Model Accuracy</p>
+                </div>
+                <div class="stat-box">
+                    <h3>3+</h3>
+                    <p>Years Coding</p>
+                </div>
+                <div class="stat-box">
+                    <h3>2026</h3>
+                    <p>Graduation Year</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="section bg-alt">
+        <div class="section-title">
+            <h2>Data Science & Analytics Projects</h2>
+            <p>Explore production-grade machine learning pipelines, predictive engines, and web apps.</p>
+        </div>
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="ds">Data Science & ML</button>
+            <button class="filter-btn" data-filter="da">Data Analytics & BI</button>
+            <button class="filter-btn" data-filter="web">Full-Stack Web</button>
+        </div>
+        <div class="projects-grid" id="projectsGrid"></div>
+    </section>
+
+    <!-- RESUME HUB SECTION -->
+    <section id="resume" class="section">
+        <div class="section-title">
+            <h2>Professional Resume Hub</h2>
+            <p>View your uploaded PDF resume directly or build your custom structured resume with 3D skill visualizer.
+            </p>
+        </div>
+
+        <div class="resume-mode-selector">
+            <button class="mode-btn active" data-mode="upload"><i class="fa-solid fa-file-arrow-up"></i> Uploaded
+                Document Viewer</button>
+            <button class="mode-btn" data-mode="builder"><i class="fa-solid fa-wand-magic-sparkles"></i> 3D Custom
+                Resume Builder</button>
+        </div>
+
+        <!-- MODE 1: PDF EMBEDDED VIEWER -->
+        <div id="modeUpload" class="resume-view-panel active">
+            <div class="upload-box-container">
+                <div class="drop-zone" id="dropZone">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    <h3>Drag & Drop your Resume PDF Here</h3>
+                    <p>or click to browse from your computer</p>
+                    <input type="file" id="resumeFileInput" accept=".pdf" hidden>
+                    <button class="btn btn-primary" onclick="document.getElementById('resumeFileInput').click()">Browse
+                        PDF File</button>
+                </div>
+                <div class="uploaded-viewer-container" id="uploadedPreviewContainer" style="display: none;">
+                    <div class="preview-header">
+                        <div>
+                            <h4 id="uploadedFileName"><i class="fa-solid fa-file-pdf text-accent"></i> Lavit_resume.pdf
+                            </h4>
+                            <p class="text-sm text-secondary">PDF loaded and rendered successfully for direct viewing.
+                            </p>
+                        </div>
+                        <div class="preview-actions">
+                            <button class="btn btn-sm btn-outline" id="downloadUploadedBtn"><i
+                                    class="fa-solid fa-download"></i> Download PDF</button>
+                            <button class="btn btn-sm btn-danger" id="removeUploadedBtn"><i
+                                    class="fa-solid fa-trash"></i> Remove</button>
+                        </div>
+                    </div>
+                    <div class="iframe-box-wrapper">
+                        <iframe id="pdfViewerIframe" src="" title="Uploaded PDF Resume"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODE 2: 3D CUSTOM RESUME BUILDER WITH SECURE HIDE FORM -->
+        <div id="modeBuilder" class="resume-view-panel" style="display: none;">
+
+            <!-- ADMIN LOCK BAR -->
+            <div class="admin-lock-bar">
+                <div class="admin-status" id="adminStatusIndicator">
+                    <i class="fa-solid fa-lock-open text-warning"></i> <span>Editor Unlocked (Admin Mode)</span>
+                </div>
+                <div class="admin-controls">
+                    <button class="btn btn-sm btn-primary" id="lockEditorBtn"><i class="fa-solid fa-lock"></i> Lock &
+                        Secure Resume</button>
+                    <button class="btn btn-sm btn-outline" id="unlockEditorBtn" style="display: none;"><i
+                            class="fa-solid fa-key"></i> Unlock with Password</button>
+                </div>
+            </div>
+
+            <div class="builder-layout" id="builderLayoutGrid">
+                <!-- FORM CONTROLS -->
+                <div class="builder-form-card" id="builderFormCard">
+                    <h3><i class="fa-solid fa-sliders"></i> Resume Customizer</h3>
+
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="bName" value="Lavit Tyagi (लвит त्यागी)">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Professional Title</label>
+                            <input type="text" id="bTitle" value="Data Scientist & Full-Stack Developer">
+                        </div>
+                        <div class="form-group">
+                            <label>Email & Phone</label>
+                            <input type="text" id="bContact" value="lavittyagi705@gmail.com | +91-6260585763">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Bio / Summary Paragraph</label>
+                        <textarea id="bSummary"
+                            rows="3">B.Tech Computer Science student at ITM University Gwalior specializing in MERN stack web development, machine learning models, and predictive data analytics pipelines.</textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Paragraph Text Alignment</label>
+                            <select id="bTextAlign">
+                                <option value="left">Left Aligned</option>
+                                <option value="center">Center Aligned</option>
+                                <option value="right">Right Aligned</option>
+                                <option value="justify" selected>Justify</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Section Heading Style</label>
+                            <select id="bHeaderStyle">
+                                <option value="normal">Standard Header</option>
+                                <option value="uppercase" selected>UPPERCASE BOLD</option>
+                                <option value="italic">Italicized Accent</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- 3D SKILL VISUALIZER -->
+                    <div class="form-group">
+                        <label><i class="fa-solid fa-cube"></i> 3D Interactive Skill Visualizer & Levels (%)</label>
+                        <div id="skillInputsList">
+                            <div class="skill-input-row">
+                                <input type="text" class="sk-name" value="Python & Scikit-Learn">
+                                <input type="number" class="sk-val" value="95" min="10" max="100">
+                                <button type="button" class="btn-del-skill" onclick="this.parentElement.remove()"><i
+                                        class="fa-solid fa-xmark"></i></button>
+                            </div>
+                            <div class="skill-input-row">
+                                <input type="text" class="sk-name" value="React & MERN Stack">
+                                <input type="number" class="sk-val" value="90" min="10" max="100">
+                                <button type="button" class="btn-del-skill" onclick="this.parentElement.remove()"><i
+                                        class="fa-solid fa-xmark"></i></button>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-sm btn-outline mt-2" id="addSkillBtn"><i
+                                class="fa-solid fa-plus"></i> Add Skill Bar</button>
+                    </div>
+
+                    <!-- DYNAMIC CUSTOM SECTIONS -->
+                    <div class="form-group">
+                        <label><i class="fa-solid fa-folder-plus"></i> Custom Sections (Add Extra Headings &
+                            Paragraphs)</label>
+                        <div id="customSectionsList">
+                            <div class="custom-sec-row">
+                                <input type="text" class="cs-heading" value="EXPERIENCE & PROJECTS">
+                                <textarea class="cs-body"
+                                    rows="2">Travel and Tourism Web Application: Built full-stack platform using MERN stack with Mappls location services and JWT authentication.</textarea>
+                                <select class="cs-align">
+                                    <option value="left">Left</option>
+                                    <option value="center">Center</option>
+                                    <option value="right">Right</option>
+                                    <option value="justify" selected>Justify</option>
+                                </select>
+                                <button type="button" class="btn-del-skill" onclick="this.parentElement.remove()"><i
+                                        class="fa-solid fa-xmark"></i> Remove</button>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-sm btn-outline mt-2" id="addCustomSectionBtn"><i
+                                class="fa-solid fa-plus"></i> Add Custom Section</button>
+                    </div>
+
+                    <div class="builder-actions">
+                        <button class="btn btn-primary" id="updateBuilderPreview"><i class="fa-solid fa-rotate"></i>
+                            Apply & Lock Changes</button>
+                        <button class="btn btn-outline" id="printBuilderResume"><i class="fa-solid fa-print"></i> Export
+                            / Print Resume</button>
+                    </div>
+                </div>
+
+                <!-- STABLE 3D RESUME PREVIEW CONTAINER -->
+                <div class="builder-preview-container full-width-preview" id="builderPreviewWrapper">
+                    <div class="live-resume-card stable-3d-card" id="liveResumeCard">
+                        <div class="res-top-banner">
+                            <h2 id="outName">Lavit Tyagi (लवित त्यागी)</h2>
+                            <h4 id="outTitle">Data Scientist & Full-Stack Developer</h4>
+                            <p id="outContact">lavittyagi705@gmail.com | +91-6260585763</p>
+                        </div>
+                        <div class="res-body-section">
+                            <h5>Professional Summary</h5>
+                            <p id="outSummary" class="align-justify">B.Tech Computer Science student at ITM University
+                                Gwalior specializing in MERN stack web development, machine learning models, and
+                                predictive data analytics pipelines.</p>
+                        </div>
+                        <div class="res-body-section">
+                            <h5>3D Interactive Skill Visualizer</h5>
+                            <div id="outSkillsContainer" class="skills-3d-bars"></div>
+                        </div>
+                        <div id="outDynamicSectionsContainer"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CERTIFICATES SECTION -->
+    <section id="certificates" class="section bg-alt">
+        <div class="section-title">
+            <h2>Certifications & Credentials</h2>
+            <p>Verified professional certifications in Data Science, Artificial Intelligence, and Full-Stack
+                Development.</p>
+        </div>
+        <div class="certificates-grid">
+            <div class="cert-card">
+                <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
+                <h3>Full-Stack Development Bootcamp</h3>
+                <p>ITM University Gwalior • Issued Jan 2026</p>
+                <a href="#contact" class="btn btn-sm btn-outline"><i class="fa-solid fa-external-link"></i> Verify
+                    Credential</a>
+            </div>
+            <div class="cert-card">
+                <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
+                <h3>Machine Learning & Python Analytics</h3>
+                <p>Professional Certification • Issued Aug 2025</p>
+                <a href="#contact" class="btn btn-sm btn-outline"><i class="fa-solid fa-external-link"></i> Verify
+                    Credential</a>
+            </div>
+            <div class="cert-card">
+                <div class="cert-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <h3>Advanced Data Structures & Algorithms</h3>
+                <p>Computer Science Specialization • Issued 2026</p>
+                <a href="#contact" class="btn btn-sm btn-outline"><i class="fa-solid fa-external-link"></i> Verify
+                    Credential</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section">
+        <div class="section-title">
+            <h2>Get In Touch</h2>
+            <p>Have a data science project in mind or looking for a professional collaborator? Let's connect.</p>
+        </div>
+        <div class="contact-container">
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label>Your Email</label>
+                    <input type="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea rows="5" placeholder="Write your message here..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100"><i class="fa-solid fa-paper-plane"></i> Send
+                    Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Lavit Tyagi (लवित त्यागी). All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
