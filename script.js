@@ -20,34 +20,36 @@ const DEFAULT_PROFILE = {
   aboutBio: 'I am a Computer Science Engineering student at ITM University Gwalior. I work on web applications, data analytics, and machine-learning projects.',
   aboutSkills: ['Python', 'SQL', 'Excel', 'Power BI / Tableau', 'React', 'Node.js', 'MongoDB', 'Pandas'],
   aboutStats: [
-    { title: '2026', label: 'Graduation Year' },
+    { title: '2026', label: 'Graduation Year' }, git add backend / server.js backend / package.json script.js
+    git commit - m "fix(cors): allow GitHub Pages origin and configure preflight handling"
+    git push origin main    const API_BASE = '[https://lavit-portfolio-backend.onrender.com/api](https://lavit-portfolio-backend.onrender.com/api)'; const API_BASE = '[https://lavit-portfolio-backend.onrender.com/api](https://lavit-portfolio-backend.onrender.com/api)';
     { title: 'Python', label: 'Analytics' },
-    { title: 'SQL', label: 'Databases' },
-    { title: 'MERN', label: 'Web Development' }
+{ title: 'SQL', label: 'Databases' },
+{ title: 'MERN', label: 'Web Development' }
   ],
-  projects: [
-    { title: 'Travel and Tourism Web Application', category: 'web', desc: 'MERN-stack platform concept for travel services, bookings, and user accounts.', tags: ['React', 'Node.js', 'MongoDB'], link: 'https://github.com' },
-    { title: 'Soil Health Analysis', category: 'ds', desc: 'Machine-learning project exploring crop prediction from soil and environmental features.', tags: ['Python', 'Pandas', 'Scikit-learn'], link: 'https://github.com' },
-    { title: 'Sales Analytics Dashboard', category: 'da', desc: 'Dashboard concept for tracking sales performance and business KPIs.', tags: ['Excel', 'SQL', 'Power BI'], link: '' },
-    { title: 'Course Management System', category: 'web', desc: 'Web application concept for course listings, enrollment, and progress tracking.', tags: ['React', 'Express', 'MongoDB'], link: '' }
-  ],
+projects: [
+  { title: 'Travel and Tourism Web Application', category: 'web', desc: 'MERN-stack platform concept for travel services, bookings, and user accounts.', tags: ['React', 'Node.js', 'MongoDB'], link: 'https://github.com' },
+  { title: 'Soil Health Analysis', category: 'ds', desc: 'Machine-learning project exploring crop prediction from soil and environmental features.', tags: ['Python', 'Pandas', 'Scikit-learn'], link: 'https://github.com' },
+  { title: 'Sales Analytics Dashboard', category: 'da', desc: 'Dashboard concept for tracking sales performance and business KPIs.', tags: ['Excel', 'SQL', 'Power BI'], link: '' },
+  { title: 'Course Management System', category: 'web', desc: 'Web application concept for course listings, enrollment, and progress tracking.', tags: ['React', 'Express', 'MongoDB'], link: '' }
+],
   certificates: [
     { title: 'Certifications & Training', desc: 'Certificate details can be added after verification.', link: '' },
     { title: 'Academic Learning', desc: 'Computer Science Engineering — ITM University Gwalior.', link: '' }
   ],
-  skills: [
-    { name: 'Python', level: 80 },
-    { name: 'SQL', level: 80 },
-    { name: 'Excel', level: 80 },
-    { name: 'MERN Stack', level: 70 }
-  ],
-  sections: [
-    { heading: 'EDUCATION', body: 'B.Tech Computer Science Engineering — ITM University Gwalior', headingAlign: 'left', bodyAlign: 'left' },
-    { heading: 'PROJECTS', body: 'Travel and Tourism Web Application — MERN stack project', headingAlign: 'left', bodyAlign: 'left' }
-  ],
-  photoUrl: '',
-  pdfUrl: '',
-  pdfName: ''
+    skills: [
+      { name: 'Python', level: 80 },
+      { name: 'SQL', level: 80 },
+      { name: 'Excel', level: 80 },
+      { name: 'MERN Stack', level: 70 }
+    ],
+      sections: [
+        { heading: 'EDUCATION', body: 'B.Tech Computer Science Engineering — ITM University Gwalior', headingAlign: 'left', bodyAlign: 'left' },
+        { heading: 'PROJECTS', body: 'Travel and Tourism Web Application — MERN stack project', headingAlign: 'left', bodyAlign: 'left' }
+      ],
+        photoUrl: '',
+          pdfUrl: '',
+            pdfName: ''
 };
 
 let profile = structuredClone(DEFAULT_PROFILE);
