@@ -11,9 +11,26 @@ const cloudinary = require('cloudinary').v2;
 
 const app = express();
 app.set('trust proxy', 1);
+const allowedOrigins = new Set([
+  'https://lavittyagi.github.io',
+  'http://localhost:5500',
+  'http://127.0.0.1:5500',
+  'http://localhost:3000',
+  'http://localhost:5173',
+  ...(process.env.CLIENT_ORIGINS || '').split(',').map(origin => origin.trim()).filter(Boolean)
+]);
+const corsOptions = {
+  origin(origin, callback) {
+    if (!origin || allowedOrigins.has(origin)) return callback(null, true);
+    return callback(new Error('Origin is not allowed by CORS'));
+  },
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+  credentials: true
+};
+app.options('*', cors(corsOptions));
+app.use(cors(corsOptions));
 app.use(helmet());
-const allowedOrigins = (process.env.CLIENT_ORIGINS || 'https://lavittyagi.github.io').split(',').map(x => x.trim()).filter(Boolean);
-app.use(cors({ origin(origin, callback) { if (!origin || allowedOrigins.includes(origin)) return callback(null, true); return callback(new Error('Origin is not allowed by CORS')); } }));
 app.use(express.json({ limit: '100kb' }));
 app.use('/api/auth/login', rateLimit({ windowMs: 15 * 60 * 1000, limit: 10, standardHeaders: true, legacyHeaders: false }));
 

@@ -83,11 +83,11 @@ The backend exposes APIs such as:
 
 ### Frontend
 
-Deploy the static files to GitHub Pages or another static host. Before publishing, update `API_BASE` in `script.js` to the deployed backend URL (for example, `https://your-api.example.com/api`); the current value targets the local development server.
+Deploy the static files to GitHub Pages or another static host. Set `API_BASE` in `script.js` to the deployed backend URL (for example, `https://your-api.example.com/api`); the current value targets the production Render API.
 
 ### Backend
 
-Deploy the `backend` folder to a Node.js hosting service. Configure the required production credentials and set `CLIENT_ORIGINS` to the frontend's exact origin, without a path or trailing slash. For this repository's GitHub Pages site, the default is `https://lavittyagi.github.io`; set `CLIENT_ORIGINS` explicitly when using a custom domain or additional frontend origins. The hosting service should provide `PORT`; the server defaults to port `5000` for local development.
+Deploy the `backend` folder to a Node.js hosting service. Configure the required production credentials. The server always allows this repository's GitHub Pages origin (`https://lavittyagi.github.io`) and the listed local development origins. `CLIENT_ORIGINS` may be set to a comma-separated list of additional exact origins, without paths or trailing slashes. The hosting service should provide `PORT`; the server defaults to port `5000` for local development.
 
 ## Admin Usage
 
