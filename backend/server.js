@@ -12,7 +12,7 @@ const cloudinary = require('cloudinary').v2;
 const app = express();
 app.set('trust proxy', 1);
 app.use(helmet());
-const allowedOrigins = (process.env.CLIENT_ORIGINS || '').split(',').map(x => x.trim()).filter(Boolean);
+const allowedOrigins = (process.env.CLIENT_ORIGINS || 'https://lavittyagi.github.io').split(',').map(x => x.trim()).filter(Boolean);
 app.use(cors({ origin(origin, callback) { if (!origin || allowedOrigins.includes(origin)) return callback(null, true); return callback(new Error('Origin is not allowed by CORS')); } }));
 app.use(express.json({ limit: '100kb' }));
 app.use('/api/auth/login', rateLimit({ windowMs: 15 * 60 * 1000, limit: 10, standardHeaders: true, legacyHeaders: false }));
