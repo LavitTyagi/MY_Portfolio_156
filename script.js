@@ -20,12 +20,10 @@ const DEFAULT_PROFILE = {
   aboutBio: 'I am a Computer Science Engineering student at ITM University Gwalior. I work on web applications, data analytics, and machine-learning projects.',
   aboutSkills: ['Python', 'SQL', 'Excel', 'Power BI / Tableau', 'React', 'Node.js', 'MongoDB', 'Pandas'],
   aboutStats: [
-    { title: '2026', label: 'Graduation Year' }, git add backend / server.js backend / package.json script.js
-    git commit - m "fix(cors): allow GitHub Pages origin and configure preflight handling"
-    git push origin main    const API_BASE = '[https://lavit-portfolio-backend.onrender.com/api](https://lavit-portfolio-backend.onrender.com/api)'; const API_BASE = '[https://lavit-portfolio-backend.onrender.com/api](https://lavit-portfolio-backend.onrender.com/api)';
+    { title: '2026', label: 'Graduation Year' },
     { title: 'Python', label: 'Analytics' },
-{ title: 'SQL', label: 'Databases' },
-{ title: 'MERN', label: 'Web Development' }
+    { title: 'SQL', label: 'Databases' },
+    { title: 'MERN', label: 'Web Development' }
   ],
 projects: [
   { title: 'Travel and Tourism Web Application', category: 'web', desc: 'MERN-stack platform concept for travel services, bookings, and user accounts.', tags: ['React', 'Node.js', 'MongoDB'], link: 'https://github.com' },
